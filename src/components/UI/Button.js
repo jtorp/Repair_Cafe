@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const Button = ({name}) => {
+const Button = ({handleClick, children,className, ...props}) => {
   return (
-  
-    <button className="mx-2 px-4 border-2 border-black h-10 bg-purple-400 " >
-          <Link to="register" >{name ? name : "btn"}</Link>
+  <div className="p-3 mx-1">
+    <button onClick={handleClick} {...props} className={`cursor-pointer  ${className && className}`} >
+        {children}
     </button>
-  
+    </div>
   )
 }
 

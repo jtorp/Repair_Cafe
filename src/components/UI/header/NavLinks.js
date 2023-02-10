@@ -4,15 +4,14 @@ import { Link, useLocation, useNavigates } from "react-router-dom";
 
 
 const links = [
-  {name: "Link2", to: "/link", data: "01"},
-  {name: "Link1", to: "/link", data: "02"},
-  {name: "Link1", to: "/link", data: "03"},
-  {name: "Link2", to: "/link", data: "04"},
+  {name: "About", to: "/link", data: "01", icon:true},
+  {name: "News", to: "/link", data: "02", icon:false},
+  {name: "Calendar", to: "/link", data: "03", icon:false},
 ];
 
 
 const NavLinks = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -26,13 +25,17 @@ setTimeout(()=>{
     return (
       <li
         key={link.name}
-        className=" flex items-center md:px-3 mr-2 transition-all duration-300 ease-in md:text-sm px-5 font-extralight md:font-light md:capitalize"
+        className=" flex items-center md:px-5 mr-2 transition-all duration-300 ease-in  text-base font-medium"
       >
         <span data-text={link.data} className="tracking-relaxed ">
           <Link
          
            to={link.to}>{link.name}</Link>
         </span>
+        {link.icon && 
+        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>}
       </li>
     );
   });
@@ -41,8 +44,8 @@ setTimeout(()=>{
     <>
        <ul  className={
                     menuOpen
-                      ? "z-30 md:pt-0 md:relative flex flex-col md:flex-row text-2xl tracking-wide leading-relaxed"
-                      : "md:leading-snug md:relative flex md:text-sm md:tracking-normal pl-0 pt-0 xl:ml-auto"
+                      ? "md:pt-0 md:relative flex flex-col md:flex-row text-2xl tracking-wide leading-relaxed"
+                      : "md:leading-snug md:relative flex md:tracking-normal pl-0 pt-0 xl:ml-auto"
                   }>
                 {guestLinks}
               </ul>

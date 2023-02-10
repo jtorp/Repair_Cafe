@@ -13,18 +13,16 @@ module.exports = {
       xl: '1440px',
       xxl: '1535px'
     },
-    extend:{
-      fontFamily:{
-        boldFont: "",
-        
-      }
-    },
+  
     extend: {
+      boxShadow:{
+       
+      },
       colors: {
         crazyYellow:" rgb(234, 250, 53)",
         brown:"rgb(112, 67, 25)",
         grayBrown: "rgb(126, 125, 123)",
-        grayWhite:" rgb(253, 252, 248)"
+        grayWhite:"rgb(253, 252, 248)"
       }
     },
   },

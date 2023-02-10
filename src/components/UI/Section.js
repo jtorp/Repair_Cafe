@@ -1,14 +1,11 @@
 import React from 'react'
 
-const Section = () => {
+const Section = ({children}) => {
   return (
-   <div className="w-screen min-h-[450px] gradient-grid-bg">
+   <div className="w-screen h-fit py-40 gradient-grid-bg">
     <div className="container">
-    <h1 className="font-semibold text-3xl text-center">
-      section
-    </h1>
+     {children}  
     </div>
-
    </div>
   )
 }

@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap");
 
 @import url("https://use.typekit.net/zmk1zuh.css");
 
@@ -11,11 +10,22 @@
   background: rgb(126, 125, 123);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgb(253, 252, 248);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(253, 252, 248);
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
 
 html {
   scroll-behavior: smooth;
   line-height: 1.5;
-  /* font-size: 92.5%; */
 }
 
 *,
@@ -25,21 +35,48 @@ body *::before,
   margin: 0;
   padding: 0;
   font-family: "work-sans", sans-serif;
-  font-weight: 400;
   font-style: normal;
   overflow-x: hidden;
-
 }
 
 .gradient-grid-bg {
-  background: url('./assets/grid.png');
+  background: url("./assets/grid.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
 }
 
-
 .container {
   width: min(100% -10px, 840px);
   margin-inline: auto;
+}
+@layer components {
+}
+
+.outlined-btn {
+  @apply mb-0 h-10 w-36 overflow-hidden rounded
+  border 
+  border-black bg-transparent text-base
+  tracking-tighter text-black shadow-[6px_6px_0px_rgb(0,0,0,1)]  outline-none
+  transition-all duration-200
+  ease-in hover:bg-crazyYellow
+  active:bg-crazyYellow;
+}
+.filled-btn {
+  @apply mb-0 flex h-10 w-36 flex-row items-center
+  justify-center overflow-hidden rounded border
+   border-black bg-crazyYellow text-base tracking-tighter text-black outline-none transition-all duration-200 
+   ease-in
+   hover:shadow-[6px_6px_0px_rgb(0,0,0,1)] 
+   active:shadow-[6px_6px_0px_rgb(0,0,0,1)];
+}
+
+.link-btn {
+  @apply mb-0 h-10 overflow-hidden
+    rounded 
+    w-20 
+    border-none bg-transparent text-base
+    tracking-tighter text-black transition-all
+    duration-200
+    ease-in
 }

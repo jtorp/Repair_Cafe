@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
+
+
+@import url("https://use.typekit.net/zmk1zuh.css");
+
+::selection {
+  background: rgb(126, 125, 123);
+}
+
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  /* font-size: 92.5%; */
+}
+
+*,
+body *::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "work-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+
+}
+
+.gradient-grid-bg {
+  background: url('./assets/grid.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+
+.container {
+  width: min(100% -10px, 840px);
+  margin-inline: auto;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import ThemeSwitch from "../ThemeSwitch";
-import Nav from "../UI/header/Nav";
+import Nav from "./header/Nav";
 
 const Layout = () => {
   return (
